@@ -1,0 +1,61 @@
+{
+  "name": "sistarjs-ide",
+  "version": "0.0.1",
+  "description": "SistarJS IDE",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon index.server.js",
+    "dev": "node node_modules/.bin/webpack-dev-server --hot --inline --content-base src",
+    "bundle": "mkdir -p public && cp src/index.html public/ && webpack --progress --colors --watch",
+    "build": "mkdir -p public && cp src/index.html public/ && NODE_ENV=production webpack --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://L3V147H4N@bitbucket.org/sistardevelopers/sistarjs-ide.git"
+  },
+  "author": "Gabriel Matusevich",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/sistardevelopers/sistarjs-ide#readme",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.0",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.0",
+    "stylus-loader": "^1.5.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "axios": "^0.9.1",
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.15.0",
+    "bootstrap": "^3.3.6",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "immutable": "^3.7.6",
+    "jquery": "^2.2.0",
+    "jsonwebtoken": "^5.5.4",
+    "lodash": "^4.3.0",
+    "moment": "^2.11.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^4.4.4",
+    "pg-hstore": "^2.3.2",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "react-router": "^2.0.0",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.5.2",
+    "redux-promise": "^0.5.1",
+    "redux-thunk": "^1.0.3",
+    "sequelize": "^3.19.2",
+    "serve-favicon": "^2.3.0"
+  }
+}

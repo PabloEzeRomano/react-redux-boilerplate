@@ -1,0 +1,3 @@
+## HOT REACT REDUX EXPRESS BOILERPLATE
+
+Using postgress for now
