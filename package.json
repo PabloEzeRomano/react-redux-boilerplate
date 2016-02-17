@@ -1,7 +1,7 @@
 {
-  "name": "sistarjs-ide",
+  "name": "react-redux-boilerplate",
   "version": "0.0.1",
-  "description": "SistarJS IDE",
+  "description": "React Redux Boilerplate",
   "main": "main.js",
   "scripts": {
     "start": "nodemon index.server.js",
@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://L3V147H4N@bitbucket.org/sistardevelopers/sistarjs-ide.git"
+    "url": "git+https://github.com/L3V147H4N/react-redux-boilerplate.git"
   },
   "author": "Gabriel Matusevich",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/sistardevelopers/sistarjs-ide#readme",
+  "homepage": "https://github.com/L3V147H4N/react-redux-boilerplate.git#readme",
   "devDependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.2",
