@@ -1,6 +1,6 @@
 ## HOT REACT REDUX EXPRESS BOILERPLATE
 
-Using postgress for now
+Using postgress and sequelize for now
 
 ### Intructions
 1. npm i
