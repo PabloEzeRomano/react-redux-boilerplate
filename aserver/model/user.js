@@ -4,7 +4,7 @@
 
 var
   Sequelize = require('sequelize'),
-  sequelize = require('../database/database_connection'),
+  sequelize = require('../database/database-connection'),
   bcrypt    = require('bcrypt');
 
 var User = sequelize.define('User', {

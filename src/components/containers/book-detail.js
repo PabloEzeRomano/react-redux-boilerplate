@@ -19,7 +19,6 @@ class BookDetail extends Component {
 
   onDeleteFormSubmit (event) {
     event.preventDefault();
-    console.log('derp');
     this.props.deleteBook(this.props.selectedBook.id);
   }
 
@@ -41,7 +40,6 @@ class BookDetail extends Component {
 
   onUpdateFormSubmit (event) {
     event.preventDefault();
-    console.log('derp');
     this.props.updateBook(this.state.editBook);
   }
 

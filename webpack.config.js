@@ -6,13 +6,16 @@
 'use strict';
 
 const
+  path = require('path'),
   webpack = require('webpack');
 
 var config = {
   context : __dirname + '/src',
+
   entry   : [
     './index.js'
   ],
+
   output  : {
     path      : __dirname + '/public',
     filename  : 'index.bundle.js'
@@ -33,7 +36,7 @@ var config = {
         exclude : /node_modules/,
         loader : 'babel',
         query : {
-          presets : ['es2015', 'react']
+          presets : ['es2015', 'react', 'stage-2']
         }
       },
       { test : /\.css$/, loader : 'style!css' },

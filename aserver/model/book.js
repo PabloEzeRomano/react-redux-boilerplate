@@ -4,7 +4,7 @@
 
 var
   Sequelize = require('sequelize'),
-  sequelize = require('../database/database_connection');
+  sequelize = require('../database/database-connection');
 
 var Book = sequelize.define('Book', {
   title : Sequelize.STRING,

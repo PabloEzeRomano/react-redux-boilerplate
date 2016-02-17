@@ -2,7 +2,7 @@
 
 var
   express = require('express'),
-  Book = require('../model/book');
+  BooksController = require('../controller/books-controller');
 
 var router = express.Router();
 
@@ -24,17 +24,18 @@ router
       criteria = {};
     }
 
-    Book.findAll(criteria)
+    BooksController.findAll(criteria)
       .then(books => {
         res.json(books);
       })
       .catch(err => {
         res.status(500).json(err);
       });
+
   })
   .post('/books', (req, res) => {
 
-    Book.create(req.body)
+    BooksController.create(req.body)
       .then(book => {
         res.json(book);
       })
@@ -45,13 +46,13 @@ router
   })
   .put('/books/:id', (req, res) => {
 
-    Book.update(req.body,{
-        where : {
-          id : req.params.id
-        }
-      })
+    BooksController.update(req.body, {
+      where : {
+        id : req.params.id
+      }
+    })
       .then(rows => {
-        Book.find({ where : { id : req.params.id }})
+        BooksController.findById(req.params.id)
           .then(book => {
             res.json(book);
           })
@@ -65,7 +66,7 @@ router
 
   })
   .delete('/books/:id', (req, res) => {
-    Book.destroy({
+    BooksController.destroy({
       where : {
         id : req.params.id
       }

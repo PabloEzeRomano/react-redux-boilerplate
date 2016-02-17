@@ -1,8 +1,8 @@
 'use strict';
 
 var
-  BaseController  = require('./base_controller'),
-  User            = require('../model/user');
+  BaseController = require('./base-controller'),
+  User = require('../model/user');
 
 class UsersController extends BaseController {
 
@@ -15,25 +15,21 @@ class UsersController extends BaseController {
     return User.authenticate(username, password, cb);
   }
 
-  static getAll (criteria) {
+  static findAll (criteria) {
 
     criteria = criteria ? criteria : {};
 
-    return User.find({
-      where : criteria
-    });
+    return User.find(criteria);
   }
 
-  static getOne (criteria) {
+  static findOne (criteria) {
 
     criteria = criteria ? criteria : {};
 
-    return User.findOne({
-      where : criteria
-    });
+    return User.findOne(criteria);
   }
 
-  static getById (id) {
+  static findById (id) {
     return User.findById(id);
   }
 
