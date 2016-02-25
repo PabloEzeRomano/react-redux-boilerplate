@@ -11,10 +11,6 @@ class MovieList extends Component {
     super(props);
   }
 
-  componentDidMount () {
-    this.props.fetchMovies('');
-  }
-
   renderList () {
     if (this.props.movies.length > 0) {
       return this.props.movies.map(movie => {

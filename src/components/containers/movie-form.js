@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import {connect} from 'react-redux';
-import {createMovie} from '../../actions/movies_actions';
+import {createMovie, updateMovie} from '../../actions/movies_actions';
 import {bindActionCreators} from 'redux';
 
 class MovieForm extends Component {
@@ -64,11 +64,11 @@ class MovieForm extends Component {
           <h4>Nueva Pelicula</h4>
         </div>
         <div className="panel-body">
-          <input id="title" onChange={this.onInputChange.bind(this)} value={this.state.editMovie.title} type="text" className="form-control" placeholder="Titulo" required/>
-          <input id="director" onChange={this.onInputChange.bind(this)} value={this.state.editMovie.director} type="text" className="form-control" placeholder="Director"/>
-          <input id="cast" onChange={this.onInputChange.bind(this)} value={this.state.editMovie.cast} type="text" className="form-control" placeholder="Reparto"/>
-          <input id="duration" onChange={this.onInputChange.bind(this)} value={this.state.editMovie.duration} type="number" className="form-control" placeholder="Duracion"/>
-          <input id="year" onChange={this.onInputChange.bind(this)} value={this.state.editMovie.year} type="number" className="form-control" placeholder="Año"/>
+          <input id="title" onChange={this.onInputChange.bind(this)} value={this.state.movie.title} type="text" className="form-control" placeholder="Titulo" required/>
+          <input id="director" onChange={this.onInputChange.bind(this)} value={this.state.movie.director} type="text" className="form-control" placeholder="Director"/>
+          <input id="cast" onChange={this.onInputChange.bind(this)} value={this.state.movie.cast} type="text" className="form-control" placeholder="Reparto"/>
+          <input id="duration" onChange={this.onInputChange.bind(this)} value={this.state.movie.duration} type="number" className="form-control" placeholder="Duracion"/>
+          <input id="year" onChange={this.onInputChange.bind(this)} value={this.state.movie.year} type="number" className="form-control" placeholder="Año"/>
         </div>
         <div className="panel-footer">
           <div className="clearfix">
@@ -88,7 +88,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
-    createMovie : createMovie
+    createMovie : createMovie,
+    updateMovie : updateMovie
   }, dispatch);
 }
 

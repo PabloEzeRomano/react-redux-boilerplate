@@ -3,7 +3,8 @@
 var
   User = require('./user'),
   Movie = require('./movie'),
-  Book = require('./book');
+  Book = require('./book'),
+  Person = require('./person');
 
 var
   user    = null;
@@ -61,9 +62,6 @@ function movieCount () {
   Movie.count()
     .then(seedMovies);
 }
-
-var Director = Movie.belongsTo(Person, {as: 'director'});
-var Actor = Movie.belongsToMany(Person, {as: 'cast'});
 
 function seedMovies () {
   Movie.bulkCreate([
@@ -129,11 +127,13 @@ function seedMovies () {
       year : 2014
     }
   ], {
-    include: [Director, Actor]
+    include: [ Person ]
   });
 }
 
 module.exports = {
   User,
-  Book
+  Book,
+  Movie,
+  Person
 };
