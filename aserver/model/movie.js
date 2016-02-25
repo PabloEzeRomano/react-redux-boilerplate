@@ -11,8 +11,8 @@ var Movie = sequelize.define('Movie', {
   timestamps : true,
 });
 
-Movie.belongsTo(Person, {as: 'director'});
-Movie.belongsToMany(Person, {as: 'cast'});
+Movie.belongsTo(Person, {trough : 'director'});
+Movie.belongsToMany(Person, {trough : 'cast'});
 
 
 module.exports = Movie;
