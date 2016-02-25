@@ -8,6 +8,9 @@ import BookList from './containers/book-list';
 import BookDetail from './containers/book-detail';
 import SearchBar from './containers/search-bar';
 import BookForm from './containers/book-form';
+import MovieList from './containers/movie-list';
+import MovieDetail from './containers/movie-detail';
+import MovieForm from './containers/movie-form';
 
 class IndexRoute extends Component {
 
@@ -40,6 +43,20 @@ class IndexRoute extends Component {
         <div className="row">
           <div className="col-xs-4">
             <BookForm/>
+          </div>
+        </div>
+        <hr/>
+        <div className="row">
+          <div className="col-xs-4">
+            <MovieList/>
+          </div>
+          <div className="col-xs-8">
+            <MovieDetail/>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-4">
+            <MovieForm/>
           </div>
         </div>
       </div>

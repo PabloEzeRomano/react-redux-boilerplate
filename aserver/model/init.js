@@ -2,6 +2,7 @@
 
 var
   User = require('./user'),
+  Movie = require('./movie'),
   Book = require('./book');
 
 var
@@ -24,7 +25,9 @@ function seedUser (count) {
       .then(function (u) {
         user = u;
         Book.sync()
-          .then(bookCount)
+          .then(bookCount);
+        Movie.sync()
+          .then(movieCount);
       });
   }
 }
@@ -52,6 +55,82 @@ function seedBooks () {
       pages : 333
     }
   ]);
+}
+
+function movieCount () {
+  Movie.count()
+    .then(seedMovies);
+}
+
+var Director = Movie.belongsTo(Person, {as: 'director'});
+var Actor = Movie.belongsToMany(Person, {as: 'cast'});
+
+function seedMovies () {
+  Movie.bulkCreate([
+    {
+      title: 'La droga es buena',
+      director: {
+        name: 'Quentin',
+        firstname: 'Tarantino'
+      },
+      cast: [
+        {
+          name: 'Leonardo',
+          lastname: 'Di Caprio'
+        },
+        {
+          name: 'Jhonny',
+          lastname: 'Knoxville'
+        },
+        {
+          name: 'Jessica',
+          lastname: 'Alba'
+        }
+      ],
+      duration : 120,
+      year : 2013
+    },
+    {
+      title: 'Vamoooo REACT!!!!',
+      director: {
+        name: 'Gabriel',
+        firstname: 'Matusevich'
+      },
+      cast: [
+        {
+          name: 'Pablo',
+          lastname: 'Romano'
+        }
+      ],
+      duration : 98,
+      year : 2016
+    },
+    {
+      title: 'Saca tu papa',
+      director: {
+        name: 'Antonio',
+        firstname: 'Gasalla'
+      },
+      cast: [
+        {
+          name: 'Ashton',
+          lastname: 'Kutcher'
+        },
+        {
+          name: 'Dandy',
+          lastname: 'Leviere'
+        },
+        {
+          name: 'Franco',
+          lastname: 'Di Luca'
+        }
+      ],
+      duration : 100,
+      year : 2014
+    }
+  ], {
+    include: [Director, Actor]
+  });
 }
 
 module.exports = {

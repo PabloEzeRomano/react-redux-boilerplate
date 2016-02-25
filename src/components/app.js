@@ -43,6 +43,9 @@ class App extends Component {
                 <li className={this.isActiveRoute.bind(this, 'books')()}>
                   <Link to="books">Books</Link>
                 </li>
+                <li className={this.isActiveRoute.bind(this, 'movies')()}>
+                  <Link to="movies">Movies</Link>
+                </li>
                 <li className={this.isActiveRoute.bind(this, 'ace')()}>
                   <Link to="ace">Ace</Link>
                 </li>

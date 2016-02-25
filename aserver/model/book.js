@@ -15,4 +15,3 @@ var Book = sequelize.define('Book', {
 });
 
 module.exports = Book;
-
